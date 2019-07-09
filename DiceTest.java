@@ -1,3 +1,5 @@
+
+
 import java.text.DecimalFormat;
 
 import javax.swing.*;
@@ -7,11 +9,15 @@ public class DiceTest {
 
 	public static void main(String[] args) {
 		
+		
+		
+		
 		// TODO Auto-generated method stub
 		
 		Dice myDice=new Dice();
 		myDice.rollDie(1000);
 		DecimalFormat df=new DecimalFormat("#.#"); //to format the percentage to 1 decimal place
+		
 		
 		
 		
@@ -24,18 +30,21 @@ public class DiceTest {
 			{"5",myDice.getCount5s(),df.format(myDice.getPercent(myDice.count5s))},
 			{"6",myDice.getCount6s(),df.format(myDice.getPercent(myDice.count6s))},
 			{"","",""},
-			{"Total",myDice.getTotal()," "}
+			{"Total",myDice.getTotal(),myDice.totalPercent()}
 			
 		};
 		JTable table= new JTable(data,column);
 		JFrame frame=new JFrame("Die Result Table");
-		frame.add(new JScrollPane(table));
+		frame.getContentPane().add(new JScrollPane(table));
 		
 		frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-        frame.setSize(500, 200);
+        frame.setSize(600, 250);
         frame.setVisible(true);
 		
+        
+      
 		
+        
 
 	}
 
