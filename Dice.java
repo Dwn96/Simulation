@@ -1,79 +1,69 @@
-import java.util.Random;
+
 
 public class Dice {
 	int count1s = 0,count2s=0,count3s=0,count4s=0,count5s=0,count6s=0;
-	
+	double totalPercent;
 	
 		void rollDie(int rolls){
 		
 		for (int i = 0; i < rolls; i++) {
+ 			
+					
+			double randomInt = java.lang.Math.random();
 			
-			
-			Random rand = new Random();
-			int randomInt = rand.nextInt(24); //generates random numbers between 0-23
-			if (randomInt >= 0 && randomInt <= 3) {				
+			if (randomInt >= 0 && randomInt < 1/6.0) {				
 				count1s++;
 			}
-			if (randomInt >= 4 && randomInt <= 7) {				
+			if (randomInt >= 1/6.0 && randomInt < 2/6.0) {				
 				count2s++;
 			}
-			if (randomInt >= 8 && randomInt <= 11) {				
+			if (randomInt >=2/6.0 && randomInt < 3/6.0) {				
 				count3s++;
 			}
-			if (randomInt >= 12 && randomInt <= 15) {				
+			if (randomInt >= 3/6.0 && randomInt < 4/6.0) {				
 				count4s++;
 			}
-			if (randomInt >= 16 && randomInt <= 19) {				
+			if (randomInt >=4/6.0 && randomInt < 5/6.0) {				
 				count5s++;
 			}
-			if (randomInt >= 20 && randomInt <= 23) {				
+			if (randomInt >=5/6.0 && randomInt <1) {				
 				count6s++;
 			} 			
 			
-		}
-		
-		 
-		
-		
-		
-		System.out.println("Number of times 1 was achieved " +count1s);
-		System.out.println("Number of times 2 was achieved " +count2s);
-		System.out.println("Number of times 3 was achieved " +count3s);
-		System.out.println("Number of times 4 was achieved " +count4s);
-		System.out.println("Number of times 5 was achieved " +count5s);
-		System.out.println("Number of times 6 was achieved " +count6s);
-		
-		
-		
+		}	
 		
 	
 	}
 		
 		
-		double getCount1s(){
+		int getCount1s(){
 			return count1s;
 		}
-		double getCount2s(){
+		int getCount2s(){
 			return count2s;
 		}
-		double getCount3s(){
+		int getCount3s(){
 			return count3s;
 		}
-		double getCount4s(){
+		int getCount4s(){
 			return count4s;
 		}
-		double getCount5s(){
+		int getCount5s(){
 			return count5s;
 		}
-		double getCount6s(){
+		int getCount6s(){
 			return count6s;
 		}
-		double getTotal(){
+		int getTotal(){
 			return count1s+count2s+count3s+count4s+count5s+count6s;
 		}
 		
-		double getPercent(int counter){
-			return (counter/getTotal())*100;
+		double getPercent(double counter){
+			double Percent=counter/getTotal()*100;
+			return Percent;
 		}
-		
+		double totalPercent(){
+			double total= getPercent(count1s)+getPercent(count2s)+getPercent(count3s)+getPercent(count4s)+getPercent(count5s)+getPercent(count6s);
+			return java.lang.Math.round(total);
+		}
 }
