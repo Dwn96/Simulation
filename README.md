@@ -1,5 +1,5 @@
 # Simulation
-Simple queue simulation
+Simple dice roll simulation
 
 This simple project simulates 1000 dice rolls (or whatever you want to set it to).
 First  a random number is generated between 0 and 1(1 is not inclusive), with each range of 1/6, from 0  representing a single face.
